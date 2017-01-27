@@ -1,0 +1,14 @@
+<h1>Medicines</h1>
+
+				
+<div class="row">
+<% @medicines.each do |medicine| %>
+	<div class="col-md-3">
+			<p><%= link_to medicine.name, medicine_path(medicine) %></p>
+			<a href="/medicines/<%= medicine.id%>">
+				<%= image_tag medicine.medicine_img.url(:medicine_index) , class: "med" %>
+			</a>
+		
+	</div>
+<% end %>
+</div>
