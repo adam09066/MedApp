@@ -2,8 +2,15 @@ class MedicinesController < ApplicationController
 
 	before_action :med_find, only: [:show, :edit, :update, :destroy]
 
+
 	def index
-		@medicines = Medicine.all.order("created_at DESC")
+		if params[:category].blank?
+			@medicines = Medicine.all.order("created_at DESC")
+		else
+			@category_id = Category.find_by(name: params[:category]).id
+			@medicines = Medicine.where(:category_id => @category_id)
+		end
+		
 	end
 
 	def show
