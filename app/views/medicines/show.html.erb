@@ -5,10 +5,12 @@
 		<h3>Category: <%= @medicine.category.name %> </h3>
 		<h3 class="med-price"><%= @medicine.price %> Ft</h3>
 		<p class="med-desc"><%= @medicine.description %> </p>
-		<%= link_to "Back",root_path %>
+		<%= link_to "Back",medicines_path %>
+		 <% if can? :manage, User %>
 		<%= link_to "Edit", edit_medicine_path(@medicine) %>
 		<%= link_to "Delete", medicine_path(@medicine), method: :delete, data: { confirm: "Are you 
 			sure?"} %>
+		<% end %>
 
 	</div>
 </div>

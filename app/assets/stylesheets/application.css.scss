@@ -19,6 +19,7 @@
 
  body {
     overflow-x: hidden;
+     background: #CCFFCC;
  }
 
 /* Toggle Styles */
@@ -43,6 +44,8 @@
     padding-left: 250px;
 }
 
+
+
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
@@ -66,13 +69,16 @@
     width: 100%;
     position: absolute;
     padding: 15px;
+    background: #CCFFCC;
 }
 
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px;
 
+
 }
+
 
 /* Sidebar Styles */
 
@@ -185,8 +191,9 @@
 }
 .med {
     height: 200px;
-    width: 220px;
+    width: 225px;
     margin-bottom: 10px;
+
     @include background-tile;
 }
 
