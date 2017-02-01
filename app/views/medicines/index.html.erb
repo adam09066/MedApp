@@ -6,11 +6,12 @@
 <% @medicines.each do |medicine| %>
 	<div class="col-md-4 col-md-offset-0 purple">
 
-		<button type="button"  data-toggle="modal" data-target="#myModal" class="purple" >
-  			<p align="center"><%= medicine.name %></p>
+		<button type="button"  data-toggle="modal" data-target="#myModal" class="button" >
+  				<p align="center" class="p"><%= medicine.name %></p>
   			<a href="/medicines/<%= medicine.id%>">
 				<%= image_tag medicine.medicine_img.url(:medicine_index) , class: "med" %>
 			</a>
+
 		</button>
 
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
