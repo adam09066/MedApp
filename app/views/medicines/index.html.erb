@@ -1,5 +1,5 @@
 <h1 class="h1">Medicines</h1>
-				
+	<p class="p">Nulla ut orci ac nunc convallis tincidunt. Phasellus sodales magna sem, ac finibus est blandit et. Nulla dapibus nulla sit amet scelerisque pellentesque. Nam egestas maximus nisl eu finibus. Nunc velit felis, tincidunt at rutrum sed, pretium in ex. Sed egestas nec nisl ac blandit. Sed mauris tellus, molestie scelerisque bibendum ultrices, dignissim in nulla. Cras malesuada dolor volutpat, varius neque in, finibus ante. Nulla sed mi sit amet arcu fermentum sodales. </p>			
 <br>
 <br>	
 
@@ -28,24 +28,14 @@
 					      </div>
 
 					      <div class="modal-footer">
-
+					       <% if can? :manage, User %>
+					      	<%= link_to "Edit", edit_medicine_path(medicine)%>
+					      	<%= link_to "Delete", medicine_path(medicine), method: :delete, data: { confirm: "Are you sure?" } %>
+					       <% end %>
 					      </div>
 				    </div>
 			  </div>
 		</div>
 	</div>
 <% end %>
-
-
-
-
-
-<!-- Modal -->
-
-  
-	
-
-<p><%= link_to "Back", medicines_path %></p>
-
-
 
